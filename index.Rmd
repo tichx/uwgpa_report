@@ -1,0 +1,23 @@
+---
+title: "Univeristy of Washington GPA Report"
+author: "Nicholas Xu"
+date: "11/08/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = F)
+source("./boxplot_chart.R")
+source("./summary.R")
+```
+## Introduction
+
+This study is an exciting topic regarding UW courses and potentially could reach a lot of student’s demographics. A lot of students go to sites like ratemyprofessor.com or UW’s course evaluation to learn more about the courses before they commit. Therefore, the scarcity of the information circulating leads to considerable demand for such insights. By visualizing the avg GPA of UW courses, students can better assess the difficulties of each class they are taking. It also helps to foster transparency across college courses and would help us to make informed decisions to choose the right schedule for us.
+
+## Summary
+
+## Table
+
+## Charts
+

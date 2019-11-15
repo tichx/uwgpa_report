@@ -15,3 +15,4 @@ lowest_gpa <- df %>%
 most_wf <- df %>% 
   mutate(withdraw_fail = as.numeric(Fail) + as.numeric(W)) %>% 
   filter(withdraw_fail == max(withdraw_fail, na.rm = T))
+
