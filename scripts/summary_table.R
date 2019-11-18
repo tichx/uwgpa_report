@@ -13,5 +13,5 @@ P_table <- df %>%
   filter(dept_abbrev == "INFO") %>%
   mutate(course_tag = paste(dept_abbrev, course_no)) %>%
   group_by(course_tag, course_title) %>%
-  summarize(most_attended_class = sum(as.double(student_count))) %>%
-  arrange(-most_attended_class)
+  summarize(class_popularity = sum(as.double(student_count))) %>%
+  arrange(-class_popularity)
