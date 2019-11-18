@@ -12,6 +12,7 @@ source("./boxplot_chart.R")
 source("./scatterplot.R")
 source("./wf_analysis.R")
 source("./summary.R")
+source("./scripts/summary_table.R")
 ```
 ## Introduction
 
@@ -31,7 +32,7 @@ chart1
 ### Chart 2 - Average GPAs for INFO courses
 Next we want to include a high-level overview of students' performance on all the 100 - 400 level INFO courses from 2010 autumn to 2018 autumn. We first define "students' performance" to be the average GPA score, since the mean value is a good indicator of performance here, and since we have access to the average GPA data for each INFO course at each its operating quarter and year, so we can easily compute the final average GPA score of each course for all its operating quarters. We then chose the scatterplot as our visualization tool for the aforementioned aim, since each data point we want to plot, which is the average GPA for the according course, can be easily represented by a circle/marker. And after placing all the markers on a scatterplot, we are able to see the change of performance as the course level proceeds. Another important motive is we also want to give the readers an insight of the average size of each course, and this can be easily accomplished by just decr/increasing the radius of each marker!
 
-```{r}
+```{r echo=FALSE}
 chart2
 ```
 
