@@ -1,6 +1,6 @@
 ---
 title: "Univeristy of Washington GPA Report"
-author: "Nicholas Xu"
+author: "Yuheng Zhong, Keyan Ding, Chloe Chen, Nicholas Xu"
 date: "11/08/2019"
 output: html_document
 ---
@@ -20,6 +20,8 @@ This study is an exciting topic regarding UW courses and potentially could reach
 ## Table
 
 ## Charts
+### Chart #1
+### Chart #2
 ### Chart #3 - GPA distribution across info200 class
 This graph shows the gpa distribution of each letter grades from all professors of the class. The reason
 to include this graph is that it explains the grading disparity across sections. For example,
