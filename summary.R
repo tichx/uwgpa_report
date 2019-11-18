@@ -16,3 +16,15 @@ most_wf <- df %>%
   mutate(withdraw_fail = as.numeric(Fail) + as.numeric(W)) %>% 
   filter(withdraw_fail == max(withdraw_fail, na.rm = T))
 
+# top 10 professor names with highest rating (@Lance)
+data_with_pros <- df %>%
+  mutate(pro_name = paste(lastname, firstname)) %>%
+  select(professor_rating, pro_name) %>%
+  filter(is.na(professor_rating) == FALSE) %>%
+  group_by(pro_name) %>%
+  summarise(
+    ave_rate= sum(professor_rating) / n()
+  ) %>%
+  arrange(-ave_rate) %>%
+  head(10)
+
