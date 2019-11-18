@@ -3,10 +3,10 @@
 # hover_information = course_id, course_title, avg_student, avg_gpa, first_offered, last_offered
 df <- read.csv("data/uw_courses.csv", stringsAsFactors = F)
 
-third_chart <- function(df) {
-  library(dplyr)
-  library(plotly)
+library(dplyr)
+library(plotly)
 
+third_chart <- function(df) {
   # Construct the general big dataframe of informatics courses.
   info_df <- df %>%
     filter(dept_abbrev == "INFO") %>%
@@ -77,6 +77,8 @@ third_chart <- function(df) {
        yaxis = list(title = "Average GPA")
      )
 }
+
+chart2 <- third_chart(df)
 
 ##########Section 2 Function##########
 # The course with most 4.0 in percentage.
