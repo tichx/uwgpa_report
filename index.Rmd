@@ -9,6 +9,8 @@ output: html_document
 library(knitr)
 knitr::opts_chunk$set(echo = F)
 source("./boxplot_chart.R")
+source("./scatterplot.R")
+source("./wf_analysis.R")
 source("./summary.R")
 ```
 ## Introduction
@@ -20,9 +22,18 @@ This study is an exciting topic regarding UW courses and potentially could reach
 ## Table
 
 ## Charts
-### Chart #1
-### Chart #2
-### Chart #3 - GPA distribution across info200 class
+
+### Chart 1 - Add title here
+```{r}
+chart1
+```
+
+### Chart 2 - Add title here
+```{r}
+chart2
+```
+
+### Chart 3 - GPA distribution across info200 class
 This graph shows the gpa distribution of each letter grades from all professors of the class. The reason
 to include this graph is that it explains the grading disparity across sections. For example,
 the majority of the Chapin's class earned A, while very few students from Freeman's class earned an A.

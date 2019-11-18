@@ -78,7 +78,7 @@ third_chart <- function(df) {
      )
 }
 
-third_chart(df)
+chart2 <- third_chart(df)
 
 ##########Description of the third chart##########
 # We want to include a high-level overview of students' performance on

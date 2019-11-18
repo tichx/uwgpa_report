@@ -34,7 +34,7 @@ courses <- info_data %>%
   head(10)
 
 # plot the chart 
-  ggplot(courses) +
+chart1 <- ggplot(courses) +
     geom_col(mapping = aes(x = reorder(course, fail_w_rate), y = fail_w_rate)) +
     coord_flip() + 
     labs(
