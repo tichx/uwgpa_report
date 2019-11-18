@@ -20,4 +20,14 @@ This study is an exciting topic regarding UW courses and potentially could reach
 ## Table
 
 ## Charts
+### Chart #3 - GPA distribution across info200 class
+This graph shows the gpa distribution of each letter grades from all professors of the class. The reason
+to include this graph is that it explains the grading disparity across sections. For example,
+the majority of the Chapin's class earned A, while very few students from Freeman's class earned an A.
+Using stacked bar chart we can clearly see some professor gives eaiser grades on the class, 
+while others are tougher. There is no other graph can present this information clearly.
+
+```{r}
+final_plot
+```
 
