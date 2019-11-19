@@ -6,11 +6,6 @@ library(plotly)
 # import dataset
 df <- read.csv(file = "data/uw_courses.csv", stringsAsFactors = F)
 
-# For this report, we are only concerned with INFO department
-df <- df %>%
-  filter(dept_abbrev == "INFO") %>%
-  filter(course_no == "200") %>%
-  mutate(prof_name = paste0(firstname, ", ", substring(lastname, 1, 1)))
 
 # function that returns key metrics to generate a box plot (@Nicholas)
 compute <- function(dataframe, subject, course_number) {
@@ -21,6 +16,7 @@ compute <- function(dataframe, subject, course_number) {
   return(df)
 }
 
+ploting <- function(dataframe){
 class <- compute(df, "INFO", "200") %>%
   group_by(lastname) %>%
   summarize(
@@ -80,4 +76,8 @@ final_plot <- ggplot(plot_data) +
        subtitle = "Average GPA", x = "Prof. last name",
        y = "Grade Percentage", color = "Grade") +
   coord_flip()
-final_plot <- ggplotly(final_plot)
+  return(final_plot)
+}
+
+final_plot <- ggplotly(ploting(df))
+
