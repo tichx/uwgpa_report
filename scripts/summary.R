@@ -52,7 +52,7 @@ get_summary <- function(dataframe) {
   
   # The course with most 4.0 in percentage (@Keyan)
   most_four_course <- df %>%
-                             filter(dept_abbrev == "INFO") %>%
+  filter(dept_abbrev == "INFO") %>%
                              arrange(course_no) %>%
                              mutate(course_id = paste0(dept_abbrev, " ", course_no),
                                     term = factor(term, levels = c("Autumn", "Winter", "Spring", "Summer")),
