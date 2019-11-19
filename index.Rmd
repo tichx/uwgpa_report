@@ -28,7 +28,9 @@ kable(P_table)
 
 ## Charts
 
-### Chart 1 - Add title here
+### Chart 1 - Average Drop / Fail rate for INFO courses
+Firstly we want to find out the hardest courses in Informatics by examining the number of students who withdraw or fail in the class. In this analysis, we define all the students who either withdraw or fail on the course to be unable to finish the course normally. Thus, by comparing the total attended students and the number of withdrawing/drop, we can calculate and compare the difficulty of each course.
+For this chart, we pulled ten examples with the highest drop and failed rates among all the Info courses. According to the result, INFO 441 is the most challenging course that approximately 18% of the students will either drop or fail in the class. 
 ```{r}
 chart1
 ```

@@ -28,21 +28,19 @@ courses <- info_data %>%
   mutate(total_w_fail = sum(total_fail_num, total_w_num, na.rm = T)) %>%
   select(course, total_w_fail, student_num) %>%
   summarise(
-    fail_w_rate = round(total_w_fail / student_num, digits = 3) * 100
+    fail_rate = round(total_w_fail / student_num, digits = 3) * 100
   ) %>%
-  arrange(-fail_w_rate) %>%
+  arrange(-fail_rate) %>%
   head(10)
 
 # plot the chart 
 chart1 <- ggplot(courses) +
-    geom_col(mapping = aes(x = reorder(course, fail_w_rate), y = fail_w_rate)) +
+    geom_col(mapping = aes(x = reorder(course, fail_rate), y = fail_rate, fill = fail_rate)) +
     coord_flip() + 
     labs(
       title = "Course fails / withdraw rate",
       x = "Course name",
       y = "Percentage of fails/withdraw students %"
     )
-
-  
   
   
