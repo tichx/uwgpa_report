@@ -14,4 +14,5 @@ P_table <- df %>%
   mutate(course_tag = paste(dept_abbrev, course_no)) %>%
   group_by(course_tag, course_title) %>%
   summarize(class_popularity = sum(as.double(student_count))) %>%
-  arrange(-class_popularity)
+  arrange(-class_popularity) %>%
+  head(10)
