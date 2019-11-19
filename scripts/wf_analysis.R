@@ -2,7 +2,7 @@ library("dplyr")
 library("ggplot2")
 
 # import the data frame
-df <- read.csv(file = "../data/uw_courses.csv", stringsAsFactors = FALSE)
+df <- read.csv(file = "data/uw_courses.csv", stringsAsFactors = FALSE)
 
 first_chart <- function(course_data) {
   # filter the data to info department
