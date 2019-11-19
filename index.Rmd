@@ -16,15 +16,20 @@ source("./scripts/summary_table.R")
 ```
 ## Introduction
 
-This study is an exciting topic regarding UW courses and potentially could reach a lot of student’s demographics. A lot of students go to sites like ratemyprofessor.com or UW’s course evaluation to learn more about the courses before they commit. Therefore, the scarcity of the information circulating leads to considerable demand for such insights. By visualizing the avg GPA of UW courses, students can better assess the difficulties of each class they are taking. It also helps to foster transparency across college courses and would help us to make informed decisions to choose the right schedule for us.
+Students concern about grades all the time. Our report focuses on using data visualization to help us and every other UW student to understand grade disparity and to help us make better decisions.
+
+Many students go to sites like [ratemyprofessor.com](ratemyprofessor.com) or UW’s [course evaluation](https://www.washington.edu/cec/toc.html) to learn more about the courses before they commit. However, many sources cannot provide a macro overview. Therefore, we set out to help to leverage macro data into course planning. By visualizing the average GPA, grade distributions of UW courses, students can better assess the difficulties of each class they are taking. It also helps to foster transparency across college courses and would help us to make informed decisions to choose the right schedule for us.
+
+The dataset we are using comes from the UW public record office. It includes the past eight years of courses taken place in the Seattle campus, with letter grades, average GPA, professor ratings, etc. We believe this dataset could answer many questions but we will mostly focus on undergraduate INFO classes for this report.
 
 ## Summary
+
 Influences on a student’s decision to choose a particular course to study have been popular topics of researcher for many educators. For this report, we gather some general information that a student will need when deciding his/her enrollment. We are only concerned with class within Info department in this report. As indicated by the dataset, the biggest class in student enrollment is ‘r biggest_class’. ‘R most_wf’ is the class that has the greatest number of Drop/Fail. ‘R lowest_gpa’ is the info class that has the lowest average class gpa. Additionally, Professor rating is also an important factor in deciding which course to take. We also find out the top 10 professor names with highest rating: ‘r data_with_pros’
 
 ## Table
 For the summary table, we choose to summarize the dataset by the popularity of classes. The popularity of class will be based on the student count of individual class. The most popular class will be the class with the largest student count number. We want to use this table to provide a insight of enrollment statistics of each informatics classes and student's preferences among these classes. As indicated in the table, the most popular class is INFO 200 INTELL FOUNDATIONS which has a total student enrollment of 6678. The least popular class is INFO 245: DB MGMT FNDMNTLS II which only has a total student enrollment of 18. 
 ```{r echo=FALSE}
-kable(P_table)
+kable(P_table,col.names = c("Course", "Title", "Class Popularity"))
 ```
 
 ## Charts
@@ -46,13 +51,16 @@ chart2
 From the chart, we observed that intro courses generally have a bigger class size. In specific, INFO 100, 101, 102, 198, 200, 201, 270, 300 are significant in their class size. For the courses in the middle i.e. intermediate level courses, class sizes are getting much smaller to around 30 except for INFO 380, with two different titles, which had an average class size of approximately 120. Lastly for the upper division courses, their size are kept small to around 30 as well but with a few more exceptions: INFO 450, 470, 490, 491, which have an average class size ranging from 68 to all the way to 139. The average GPAs for INFO courses are between 3.3 to 3.9, where the least value is held by INFO 180, 344, 447, 461 and the most is held by INFO 365 and 491.
 
 ### Chart 3 - GPA distribution across info200 class
-This graph shows the gpa distribution of each letter grades from all professors of the class. The reason
-to include this graph is that it explains the grading disparity across sections. For example,
-the majority of the Chapin's class earned A, while very few students from Freeman's class earned an A.
-Using stacked bar chart we can clearly see some professor gives eaiser grades on the class, 
-while others are tougher. There is no other graph can present this information clearly.
+
+**Why to use a stacked bar chart?**
+
+The reason to include this graph is that it explains the grading disparity across sections. With fixed length across different sections, we can easily visualize which professor's class has more A than the other in terms of percentage. Using stacked bar chart we can clearly see some professor gives eaiser grades on the class. Other charting options could not communicate grade proportioan effectively and clearly.
+
 
 ```{r}
 final_plot
 ```
 
+**What information does it reveal?**
+
+This graph shows each letter grades given from all professors of INFO 200. For example, the majority of the Chapin's class earned A, while very few students from Freeman's class earned an A. From this graph, students can quickly compare which professor's class is easier in general, and thus making an informed decision.
