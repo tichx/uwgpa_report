@@ -46,13 +46,16 @@ chart2
 From the chart, we observed that intro courses generally have a bigger class size. In specific, INFO 101, 102, 198, 200, 201, 270, 300 are significant in their class size. For the courses in the middle i.e. intermediate level courses, class sizes are getting much smaller to around 30 except for INFO 380, with two different titles in the past, which had an average class size of approximately 120. Lastly for the upper division courses, their size are kept small to around 30 as well but with a few more exceptions: INFO 450, 470, 490, 491, which have an average class size ranging from 68 to all the way 139. The average GPAs for INFO courses are between 3.3 to 3.9, where the least value is held by INFO 180, 344, 447, 461 and the most is held by INFO 365 and 491.
 
 ### Chart 3 - GPA distribution across info200 class
-This graph shows the gpa distribution of each letter grades from all professors of the class. The reason
-to include this graph is that it explains the grading disparity across sections. For example,
-the majority of the Chapin's class earned A, while very few students from Freeman's class earned an A.
-Using stacked bar chart we can clearly see some professor gives eaiser grades on the class, 
-while others are tougher. There is no other graph can present this information clearly.
+
+**Why to use a stacked bar chart?**
+
+The reason to include this graph is that it explains the grading disparity across sections. With fixed length across different sections, we can easily visualize which professor's class has more A than the other in terms of percentage. Using stacked bar chart we can clearly see some professor gives eaiser grades on the class. Other charting options could not communicate grade proportioan effectively and clearly.
 
 ```{r}
 final_plot
 ```
+
+**What information does it reveal?**
+
+This graph shows each letter grades given from all professors of INFO 200. For example, the majority of the Chapin's class earned A, while very few students from Freeman's class earned an A. From this graph, students can quickly compare which professor's class is easier in general, and thus making an informed decision.
 
