@@ -24,7 +24,7 @@ Influences on a student’s decision to choose a particular course to study have
 ## Table
 For the summary table, we choose to summarize the dataset by the popularity of classes. The popularity of class will be based on the student count of individual class. The most popular class will be the class with the largest student count number. We want to use this table to provide a insight of enrollment statistics of each informatics classes and student's preferences among these classes. As indicated in the table, the most popular class is INFO 200 INTELL FOUNDATIONS which has a total student enrollment of 6678. The least popular class is INFO 245: DB MGMT FNDMNTLS II which only has a total student enrollment of 18. 
 ```{r echo=FALSE}
-kable(P_table, col.names = c("Course", "Title", "Class Popularity"))
+table
 ```
 
 ## Charts
