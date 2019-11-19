@@ -12,15 +12,10 @@ get_summary <- function(dataframe) {
   # Courses with lowest average class gpa within info department (@Nicholas)
   lowest_gpa <- df %>%
     filter(avg_gpa == min(df$avg_gpa)) %>%
-<<<<<<< HEAD
-    mutate(text = paste0(lastname, "'s ", course_code, " ",
-                         course_title, " has an average GPA of ", avg_gpa)) %>%
-=======
     mutate(text = paste0(
       lastname, "'s ", course_code, " ", course_title,
       " has an average GPA of ", avg_gpa
     )) %>%
->>>>>>> 812b298d45211aa814213453369b3ef5be82bbda
     head(1) %>%
     pull()
 
@@ -28,17 +23,11 @@ get_summary <- function(dataframe) {
   most_wf <- df %>%
     mutate(withdraw_fail = as.numeric(Fail) + as.numeric(W)) %>%
     filter(withdraw_fail == max(withdraw_fail, na.rm = T)) %>%
-<<<<<<< HEAD
-    mutate(text = paste0(lastname, "'s ", course_code, " ",
-                         course_title, " has a total of ",
-                         withdraw_fail, " students withdrawed or failed")) %>%
-=======
     mutate(text = paste0(
       lastname, "'s ", course_code, " ",
       course_title, " has a total of ", withdraw_fail,
       " students withdrawed or failed"
     )) %>%
->>>>>>> 812b298d45211aa814213453369b3ef5be82bbda
     head(1) %>%
     pull()
 
@@ -77,13 +66,8 @@ get_summary <- function(dataframe) {
       term = factor(term, levels = c("Autumn", "Winter", "Spring", "Summer")),
       term = as.character(term)
     ) %>%
-<<<<<<< HEAD
-    select(course_id, course_title, section_id,
-           term, year, A, student_count) %>%
-=======
     select(course_id, course_title, section_id, term, year,
            A, student_count) %>%
->>>>>>> 812b298d45211aa814213453369b3ef5be82bbda
     group_by(course_id, course_title) %>%
     summarise(
       A_percentage =
