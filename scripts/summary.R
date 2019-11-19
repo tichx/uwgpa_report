@@ -1,7 +1,7 @@
 library(dplyr)
 
 # import dataset
-df <- read.csv(file = "data/uw_courses.csv", stringsAsFactors = F)
+df <- read.csv(file = "../data/uw_courses.csv", stringsAsFactors = F)
 
   
 # For this report, we are only concerned with INFO department
@@ -68,13 +68,14 @@ get_summary <- function(dataframe) {
                              select(course_id) %>% 
     pull()
   
-    summary <-list()
-    summary(min_gpa = lowest_gpa,
-            max_withdrawl_fail=most_wf,
-            largest_class=biggest_class,
-            best_performing_class=most_four_course,
-            best_prof=highest_rated_prof)
+  
+    summary <- list("min_gpa" = lowest_gpa,
+            "ax_withdrawlfail" = most_wf,
+            "largest_class" = biggest_class,
+            "best_performing_class" = most_four_course,
+            "best_prof" = highest_rated_prof)
   return(summary)
 }
-sth<-get_summary(df)
+
+summary <- get_summary(df)
   

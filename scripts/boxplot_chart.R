@@ -4,7 +4,7 @@ library(ggplot2)
 library(plotly)
 
 # import dataset
-df <- read.csv(file = "data/uw_courses.csv", stringsAsFactors = F)
+df <- read.csv(file = "../data/uw_courses.csv", stringsAsFactors = F)
 
 # For this report, we are only concerned with INFO department
 df <- df %>% 
