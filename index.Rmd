@@ -8,10 +8,10 @@ output: html_document
 ```{r setup, include=FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = F)
-source("./boxplot_chart.R")
-source("./scatterplot.R")
-source("./wf_analysis.R")
-source("./summary.R")
+source("./scripts/boxplot_chart.R")
+source("./scripts/scatterplot.R")
+source("./scripts/wf_analysis.R")
+source("./scripts/summary.R")
 source("./scripts/summary_table.R")
 ```
 ## Introduction
