@@ -35,4 +35,21 @@ biggest_class <- df %>%
   summarize(class_size = sum(as.double(student_count))) %>%
   arrange(-class_size) %>%
   head(1)
+
+# The course with most 4.0 in percentage (@Keyan)
+most_four_course <- pull(df %>%
+  filter(dept_abbrev == "INFO") %>%
+  arrange(course_no) %>%
+  mutate(course_id = paste0(dept_abbrev, " ", course_no),
+  term = factor(term, levels = c("Autumn", "Winter", "Spring", "Summer")),
+                term = as.character(term)) %>%
+  select(course_id, course_title, section_id, term, year, A, student_count) %>%
+  group_by(course_id, course_title) %>%
+  summarise(A_percentage =
+    (sum(suppressWarnings(as.numeric(A)), na.rm = T) /
+     sum(suppressWarnings(as.numeric(student_count)), na.rm = T) * 100)) %>%
+  ungroup() %>%
+  ungroup() %>%
+  filter(A_percentage == max(A_percentage)) %>%
+  select(course_id))
   

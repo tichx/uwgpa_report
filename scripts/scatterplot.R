@@ -1,6 +1,6 @@
-# The file contains the third chart of our midpoint deliverable.
-# It demonstrates the relationship between average GPA and student enrolled for INFO courses.
-# hover_information = course_id, course_title, avg_student, avg_gpa, first_offered, last_offered
+# The file contains the second chart of our midpoint deliverable.
+# It is a scatterplot that shows the average GPAs for all INFO courses, where the
+# radius of each circle represents the average size of each course.
 df <- read.csv("data/uw_courses.csv", stringsAsFactors = F)
 
 library(dplyr)
@@ -79,22 +79,3 @@ third_chart <- function(df) {
 }
 
 chart2 <- third_chart(df)
-
-##########Section 2 Function##########
-# The course with most 4.0 in percentage.
-most_four_course <- pull(df %>%
-  filter(dept_abbrev == "INFO") %>%
-  arrange(course_no) %>%
-  mutate(course_id = paste0(dept_abbrev, " ", course_no),
-         term = factor(term, levels = c("Autumn", "Winter", "Spring", "Summer")),
-         term = as.character(term)) %>%
-  select(course_id, course_title, section_id, term, year, A, student_count) %>%
-  group_by(course_id, course_title) %>%
-  summarise(A_percentage =
-              (sum(suppressWarnings(as.numeric(A)), na.rm = T) /
-               sum(suppressWarnings(as.numeric(student_count)), na.rm = T) * 100)) %>%
-  ungroup() %>%
-  ungroup() %>%
-  filter(A_percentage == max(A_percentage)) %>%
-  select(course_id))
-
