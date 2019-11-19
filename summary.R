@@ -28,3 +28,11 @@ data_with_pros <- df %>%
   arrange(-ave_rate) %>%
   head(10)
 
+# courses with the biggest enrollment (@Chloe)
+biggest_class <- df %>%
+  mutate(course_tag = paste(dept_abbrev, course_no)) %>%
+  group_by(course_tag, course_title) %>%
+  summarize(class_size = sum(as.double(student_count))) %>%
+  arrange(-class_size) %>%
+  head(1)
+  

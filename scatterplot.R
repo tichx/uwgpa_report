@@ -3,10 +3,10 @@
 # hover_information = course_id, course_title, avg_student, avg_gpa, first_offered, last_offered
 df <- read.csv("data/uw_courses.csv", stringsAsFactors = F)
 
-third_chart <- function(df) {
-  library(dplyr)
-  library(plotly)
+library(dplyr)
+library(plotly)
 
+third_chart <- function(df) {
   # Construct the general big dataframe of informatics courses.
   info_df <- df %>%
     filter(dept_abbrev == "INFO") %>%
@@ -80,38 +80,6 @@ third_chart <- function(df) {
 
 chart2 <- third_chart(df)
 
-##########Description of the third chart##########
-# We want to include a high-level overview of students' performance on
-# all the 100 - 400 level INFO courses from 2010 autumn to 2018 autumn.
-# We first define "students' performance" to be the average GPA score,
-# since the mean value is a good indicator of performance here, and
-# since we have access to the average GPA data for each INFO course at
-# each its operating quarter and year, so we can easily compute the final
-# average GPA score of each course for all its operating quarters.
-# We then chose the scatterplot as our visualization tool for the
-# aforementioned aim, since each data point we want to plot, which is the
-# average GPA for the according course, can be easily represented by a
-# circle/marker. And after placing all the markers on a scatterplot, we
-# are able to see the change of performance (or difficulty?) as the course
-# level proceeds. Another important motive is we also want to give the
-# readers an insight of the average size of each course, and this can be
-# easily accomplished by just decr/increasing the radius of each marker!
-#####
-# For the time interval - 2010 autumn to 2018 autumn:
-# We observed that intro courses generally have a bigger class size.
-# In specific, INFO 100, 101, 102, 198, 200, 201, 270, 300 are
-# significant in their class size.
-# For the courses in the middle i.e. intermediate level courses, class
-# sizes are getting much smaller to around 30 except for INFO 380, with
-# two different titles, which had an average class size of approximately
-# 120.
-# Lastly for the upper division courses, their size are kept small to
-# around 30 as well but with a few more exceptions: INFO 450, 470, 490,
-# 491, which have an average class size ranging from 68 to all the way
-# to 139.
-# The average GPAs for INFO courses are between 3.3 to 3.9, where the
-# least value is held by INFO 180, 344, 447, 461 and the most is held
-# by INFO 365 and 491.
 ##########Section 2 Function##########
 # The course with most 4.0 in percentage.
 most_four_course <- pull(df %>%
