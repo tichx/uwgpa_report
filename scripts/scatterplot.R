@@ -1,7 +1,7 @@
 # The file contains the second chart of our midpoint deliverable.
 # It is a scatterplot that shows the average GPAs for all INFO courses, where the
 # radius of each circle represents the average size of each course.
-df <- read.csv("data/uw_courses.csv", stringsAsFactors = F)
+df <- read.csv("../data/uw_courses.csv", stringsAsFactors = F)
 
 library(dplyr)
 library(plotly)
