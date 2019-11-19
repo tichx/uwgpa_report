@@ -1,14 +1,15 @@
-#Install package
+# Install package
 library("dplyr")
 library(knitr)
 
-#Import data set
+# Import data set
 df <- read.csv("data/uw_courses.csv", stringsAsFactors = FALSE)
 
-#As for this summary table, we want to look into classes of informatics department. 
-#We want to summarize the popularity of informatics classes
-#Popularity of classes depends on the total enrollment of that certain class. 
-#More Popular class will have more student enrollment than less popular class. 
+# As for this summary table, we want to look into classes of informatics
+# department.
+# We want to summarize the popularity of informatics classes
+# Popularity of classes depends on the total enrollment of that certain class.
+# More Popular class will have more student enrollment than less popular class.
 summ_table <- function(df) {
   p_table <- df %>%
     filter(dept_abbrev == "INFO") %>%
@@ -20,8 +21,3 @@ summ_table <- function(df) {
 }
 
 table <- summ_table(df)
-
-
-
-
-
