@@ -2,7 +2,7 @@
 library("dplyr")
 
 #Import data set
-df <- read.csv("../data/uw_courses.csv", stringsAsFactors = FALSE)
+df <- read.csv("data/uw_courses.csv", stringsAsFactors = FALSE)
 
 #As for this summary table, we want to look into classes of informatics department. 
 #We want to summarize the popularity of informatics classes
