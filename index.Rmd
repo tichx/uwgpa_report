@@ -19,6 +19,7 @@ source("./scripts/summary_table.R")
 This study is an exciting topic regarding UW courses and potentially could reach a lot of student’s demographics. A lot of students go to sites like ratemyprofessor.com or UW’s course evaluation to learn more about the courses before they commit. Therefore, the scarcity of the information circulating leads to considerable demand for such insights. By visualizing the avg GPA of UW courses, students can better assess the difficulties of each class they are taking. It also helps to foster transparency across college courses and would help us to make informed decisions to choose the right schedule for us.
 
 ## Summary
+Influences on a student’s decision to choose a particular course to study have been popular topics of researcher for many educators. For this report, we gather some general information that a student will need when deciding his/her enrollment. We are only concerned with class within Info department in this report. As indicated by the dataset, the biggest class in student enrollment is ‘r biggest_class’. ‘R most_wf’ is the class that has the greatest number of Drop/Fail. ‘R lowest_gpa’ is the info class that has the lowest average class gpa. Additionally, Professor rating is also an important factor in deciding which course to take. We also find out the top 10 professor names with highest rating: ‘r data_with_pros’
 
 ## Table
 For the summary table, we choose to summarize the dataset by the popularity of classes. The popularity of class will be based on the student count of individual class. The most popular class will be the class with the largest student count number. We want to use this table to provide a insight of enrollment statistics of each informatics classes and student's preferences among these classes. As indicated in the table, the most popular class is INFO 200 INTELL FOUNDATIONS which has a total student enrollment of 6678. The least popular class is INFO 245: DB MGMT FNDMNTLS II which only has a total student enrollment of 18. 
@@ -38,7 +39,7 @@ chart1
 ### Chart 2 - Average GPAs for INFO courses
 Next we want to include a high-level overview of students' performance on all the 100 - 400 level INFO courses from 2010 autumn to 2018 autumn. We first define "students' performance" to be the average GPA score, since the mean value is a good indicator of performance here, and since we have access to the average GPA data for each INFO course at each its operating quarter and year, so we can easily compute the final average GPA score of each course for all its operating quarters. We then chose the scatterplot as our visualization tool for the aforementioned aim, since each data point we want to plot, which is the average GPA for the according course, can be easily represented by a circle/marker. And after placing all the markers on a scatterplot, we are able to see the change of performance as the course level proceeds. Another important motive is we also want to give the readers an insight of the average size of each course, and this can be easily accomplished by just decr/increasing the radius of each marker!
 
-```{r echo=FALSE}
+```{r echo=FALSE, fig.width=12, fig.height=8}
 chart2
 ```
 
